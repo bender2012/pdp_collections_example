@@ -39,6 +39,11 @@ public class CustomList<T> extends AbstractList<T> {
 		elementsList = temporaryList;
 		return sucess;
 	}
+	
+	@Override
+	public void add(int index, T element) {
+		elementsList.add(index, element);
+	}
 
 	@Override
 	public T remove(int index) {

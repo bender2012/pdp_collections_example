@@ -1,62 +1,189 @@
 package com.epam.pdp.custom;
 
 import static org.junit.Assert.*;
-import java.util.List;
+
 import org.junit.Test;
 
 public class CustomListTest {
-		
-	private static final String TEST_STRING = "TEST";
-	private static final String SECOND_TEST_STRING = "TEST_2";
-	private static final int POSITION_TO_INSERT = 5;
-	private static final String LINE = "--------------------"; 
 
 	@Test
 	public void testSize() {
-		System.out.println("testSize():");		
-		List<String> customList = new CustomList<String>();
-		assertEquals(POSITION_TO_INSERT, customList.size());
-		System.out.print("Empty list: ");
-		System.out.println(customList.toString());		
-		customList.add(TEST_STRING);
-		assertEquals(POSITION_TO_INSERT + 1, customList.size());
-		customList.add(SECOND_TEST_STRING);
-		assertEquals(POSITION_TO_INSERT + 2, customList.size());		
-		System.out.print("List with added elements: ");
-		System.out.println(customList.toString());
-		System.out.println(LINE);
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveRange() {
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testCustomList() {
-		List<String> customList = new CustomList<String>();
-		assertEquals(POSITION_TO_INSERT, customList.size());
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetInt() {
-		List<String> customList = new CustomList<String>();
-		customList.add(TEST_STRING);
-		String element = customList.get(POSITION_TO_INSERT);
-		assertEquals(TEST_STRING, element);
-		for (int index = 0; index < 5; index++) {
-			element = customList.get(index);
-			assertNull(element);
-		}
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testAddT() {
-		List<String> customList = new CustomList<String>();
-		assertEquals(POSITION_TO_INSERT, customList.size());
-		customList.add(TEST_STRING);
-		assertEquals(POSITION_TO_INSERT + 1, customList.size());
-		assertEquals(TEST_STRING, customList.get(POSITION_TO_INSERT));
-		customList.add(SECOND_TEST_STRING);
-		assertEquals(POSITION_TO_INSERT + 2, customList.size());
-		assertEquals(SECOND_TEST_STRING, customList.get(POSITION_TO_INSERT));		
+		fail("Not yet implemented");
 	}
-	
-	//TODO: Test remove element
+
+	@Test
+	public void testAddIntT() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveInt() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveObject() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveAllCollectionOfQ() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testHashCode() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testEquals() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIterator() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddE() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testClear() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAbstractList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetInt1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSet() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddIntE() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveInt1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIndexOf() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLastIndexOf() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddAllIntCollectionOfQextendsE() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListIterator() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testListIteratorInt() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSubList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToString() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAbstractCollection() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testIsEmpty() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testContains() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToArray() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToArrayTArray() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveObject1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testContainsAll() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddAllCollectionOfQextendsE() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveAllCollectionOfQ1() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRetainAll() {
+		fail("Not yet implemented");
+	}
 
 }
