@@ -2,7 +2,9 @@ package com.epam.pdp.custom;
 
 import static org.junit.Assert.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 
@@ -91,33 +93,71 @@ public class CustomListTest {
 
 	@Test
 	public void testRemoveInt() {
+		int positioToInsert = 1;
+		int firstRemovePosition = 6;
 		System.out.println("testRemoveInt()");
-//		List<String> customList = new CustomList<String>();
-//		customList.add(TEST_STRING);
-//		System.out.println("S-------------------------");
-//		customList.add(1, TEST_STRING);
-//		customList.remove(6);
-//		System.out.println(customList);		
-//		System.out.println("S-------------------------");
-		
-		//TODO: Implement
-		////TODO: Implement
+		List<String> customList = new CustomList<String>();
+		System.out.println("Inserting " + TEST_STRING);		
+		customList.add(TEST_STRING);
+		System.out.println(customList);
+		System.out.println("Inserting " + TEST_STRING + " to position " + positioToInsert);
+		customList.add(positioToInsert, TEST_STRING);
+		System.out.println(customList);
+		System.out.println("Removeing from position: " + firstRemovePosition);
+		customList.remove(firstRemovePosition);
+		System.out.println(customList);
+		System.out.println("Removeing from position: " + positioToInsert);
+		customList.remove(positioToInsert);
+		System.out.println(customList);
 		System.out.println(LINE);
 	}
 
 	@Test
 	public void testRemoveObject() {
-		//TODO: Implement
+		int positionToInsert = 3;
+		System.out.println("testRemoveObject()");
+		List<String> customList = new CustomList<String>();
+		System.out.println(customList);
+		System.out.println("Inserting " + TEST_STRING);
+		customList.add(TEST_STRING);
+		System.out.println(customList);
+		System.out.println("Removeing " + TEST_STRING);
+		customList.remove(TEST_STRING);
+		System.out.println(customList);
+		System.out.println("Inserting " + TEST_STRING + " to position " + positionToInsert);
+		customList.add(positionToInsert, TEST_STRING);
+		System.out.println(customList);
+		System.out.println("Removeing " + TEST_STRING);
+		customList.remove(TEST_STRING);
+		System.out.println(customList);
+		assertEquals(false, customList.contains(TEST_STRING));
+		System.out.println(LINE);
 	}
 
 	@Test
-	public void testRemoveAllCollectionOfQ() {
-		//TODO: Implement
+	public void testRemoveAllCollectionOfQ() {		
+		List<String> customList = new CustomList<String>();
+		Set<String> collectionToRemove = new HashSet<String>();		
+		customList.add(TEST_STRING);		
+		collectionToRemove.add(TEST_STRING);
+		customList.add(SECOND_TEST_STRING);
+		collectionToRemove.add(SECOND_TEST_STRING);
+		customList.removeAll(collectionToRemove);
+		assertEquals(false, customList.contains(TEST_STRING));
+		assertEquals(false, customList.contains(SECOND_TEST_STRING));		
 	}
 
 	@Test
 	public void testHashCode() {
-		//TODO: Implement
+		int hashCodeBefore = 0;
+		int hashCodeAfter = 0;
+		System.out.println("testHashCode():");
+		List<String> customList = new CustomList<String>();
+		hashCodeBefore = customList.hashCode();
+		customList.add(TEST_STRING);
+		hashCodeAfter = customList.hashCode();
+		assertNotSame(hashCodeBefore, hashCodeAfter);
+		System.out.println(LINE);
 	}
 
 	@Test
