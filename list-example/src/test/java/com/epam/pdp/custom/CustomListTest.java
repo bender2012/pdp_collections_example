@@ -3,6 +3,7 @@ package com.epam.pdp.custom;
 import static org.junit.Assert.*;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -164,17 +165,32 @@ public class CustomListTest {
 	public void testEquals() {
 		System.out.println("testEquals():");
 		List<String> firstList = new CustomList<String>();
-		List<String> secondList = new CustomList<String>();		
+		List<String> secondList = new CustomList<String>();
 		assertEquals(firstList, secondList);
-		secondList.add(TEST_STRING);		
-		firstList.add(TEST_STRING);		
-		assertEquals(firstList, secondList);		
+		secondList.add(TEST_STRING);
+		firstList.add(TEST_STRING);
+		assertEquals(firstList, secondList);
 		System.out.println(LINE);
 	}
 
 	@Test
 	public void testIterator() {
-		// TODO: Implement
+		int counter = 0;
+		List<String> customList = new CustomList<String>();
+		Iterator<String> iterator = customList.iterator();
+		while (iterator.hasNext()) {
+			iterator.next();
+			counter++;
+		}
+		assertEquals(POSITION_TO_INSERT, counter);
+		customList.add(TEST_STRING);
+		counter = 0;
+		iterator = customList.iterator();
+		while (iterator.hasNext()) {
+			iterator.next();
+			counter++;
+		}
+		assertEquals(POSITION_TO_INSERT + 1, counter);
 	}
 
 	@Test
