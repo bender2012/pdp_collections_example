@@ -9,15 +9,15 @@ import java.util.Set;
 import org.junit.Test;
 
 public class CustomListTest {
-	
+
 	private static final String TEST_STRING = "TEST";
 	private static final String SECOND_TEST_STRING = "TEST_2";
 	private static final int POSITION_TO_INSERT = 5;
-	private static final String LINE = "--------------------"; 
+	private static final String LINE = "--------------------";
 
 	@Test
 	public void testSize() {
-		System.out.println("testSize():");		
+		System.out.println("testSize():");
 		List<String> customList = new CustomList<String>();
 		assertEquals(POSITION_TO_INSERT, customList.size());
 		System.out.print("Empty list: ");
@@ -27,14 +27,14 @@ public class CustomListTest {
 		assertEquals(POSITION_TO_INSERT + 1, customList.size());
 		customList.add(SECOND_TEST_STRING);
 		System.out.println("Added element: " + SECOND_TEST_STRING);
-		assertEquals(POSITION_TO_INSERT + 2, customList.size());		
+		assertEquals(POSITION_TO_INSERT + 2, customList.size());
 		System.out.print("List with added elements: ");
 		System.out.println(customList.toString());
 		System.out.println(LINE);
 	}
 
 	@Test
-	public void testRemoveRange() {		
+	public void testRemoveRange() {
 		System.out.println("testRemoveRange():");
 		System.out.println(LINE);
 	}
@@ -87,7 +87,7 @@ public class CustomListTest {
 		System.out.println("Inserted to postion: " + secondPositionToInsert);
 		assertEquals(TEST_STRING, customList.get(firstPositionToInsert));
 		assertEquals(SECOND_TEST_STRING, customList.get(secondPositionToInsert));
-		System.out.println(customList);		
+		System.out.println(customList);
 		System.out.println(LINE);
 	}
 
@@ -97,10 +97,11 @@ public class CustomListTest {
 		int firstRemovePosition = 6;
 		System.out.println("testRemoveInt()");
 		List<String> customList = new CustomList<String>();
-		System.out.println("Inserting " + TEST_STRING);		
+		System.out.println("Inserting " + TEST_STRING);
 		customList.add(TEST_STRING);
 		System.out.println(customList);
-		System.out.println("Inserting " + TEST_STRING + " to position " + positioToInsert);
+		System.out.println("Inserting " + TEST_STRING + " to position "
+				+ positioToInsert);
 		customList.add(positioToInsert, TEST_STRING);
 		System.out.println(customList);
 		System.out.println("Removeing from position: " + firstRemovePosition);
@@ -124,7 +125,8 @@ public class CustomListTest {
 		System.out.println("Removeing " + TEST_STRING);
 		customList.remove(TEST_STRING);
 		System.out.println(customList);
-		System.out.println("Inserting " + TEST_STRING + " to position " + positionToInsert);
+		System.out.println("Inserting " + TEST_STRING + " to position "
+				+ positionToInsert);
 		customList.add(positionToInsert, TEST_STRING);
 		System.out.println(customList);
 		System.out.println("Removeing " + TEST_STRING);
@@ -135,159 +137,164 @@ public class CustomListTest {
 	}
 
 	@Test
-	public void testRemoveAllCollectionOfQ() {		
+	public void testRemoveAllCollectionOfQ() {
 		List<String> customList = new CustomList<String>();
-		Set<String> collectionToRemove = new HashSet<String>();		
-		customList.add(TEST_STRING);		
+		Set<String> collectionToRemove = new HashSet<String>();
+		customList.add(TEST_STRING);
 		collectionToRemove.add(TEST_STRING);
 		customList.add(SECOND_TEST_STRING);
 		collectionToRemove.add(SECOND_TEST_STRING);
 		customList.removeAll(collectionToRemove);
 		assertEquals(false, customList.contains(TEST_STRING));
-		assertEquals(false, customList.contains(SECOND_TEST_STRING));		
+		assertEquals(false, customList.contains(SECOND_TEST_STRING));
 	}
 
 	@Test
 	public void testHashCode() {
 		int hashCodeBefore = 0;
 		int hashCodeAfter = 0;
-		System.out.println("testHashCode():");
 		List<String> customList = new CustomList<String>();
 		hashCodeBefore = customList.hashCode();
 		customList.add(TEST_STRING);
 		hashCodeAfter = customList.hashCode();
 		assertNotSame(hashCodeBefore, hashCodeAfter);
-		System.out.println(LINE);
 	}
 
 	@Test
 	public void testEquals() {
-		//TODO: Implement
+		System.out.println("testEquals():");
+		List<String> firstList = new CustomList<String>();
+		List<String> secondList = new CustomList<String>();		
+		assertEquals(firstList, secondList);
+		secondList.add(TEST_STRING);		
+		firstList.add(TEST_STRING);		
+		assertEquals(firstList, secondList);		
+		System.out.println(LINE);
 	}
 
 	@Test
 	public void testIterator() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testAddE() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testClear() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testAbstractList() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testGetInt1() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testSet() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testAddIntE() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testRemoveInt1() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testIndexOf() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testLastIndexOf() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testAddAllIntCollectionOfQextendsE() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testListIterator() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testListIteratorInt() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testSubList() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testToString() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testAbstractCollection() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testIsEmpty() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testContains() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testToArray() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testToArrayTArray() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testRemoveObject1() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testContainsAll() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testAddAllCollectionOfQextendsE() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testRemoveAllCollectionOfQ1() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 	@Test
 	public void testRetainAll() {
-		//TODO: Implement
+		// TODO: Implement
 	}
 
 }
