@@ -231,7 +231,10 @@ public class CustomListTest {
 
 	@Test
 	public void testIndexOf() {
-		// TODO: Implement
+		List<String> customList = new CustomList<String>();
+		customList.add(TEST_STRING);
+		customList.add(SECOND_TEST_STRING);
+		assertEquals(POSITION_TO_INSERT + 1, customList.indexOf(TEST_STRING));		
 	}
 
 	@Test
