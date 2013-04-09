@@ -294,53 +294,61 @@ public class CustomListTest {
 	}
 
 	@Test
-	public void testAbstractCollection() {
-		// TODO: Implement
-	}
-
-	@Test
 	public void testIsEmpty() {
-		// TODO: Implement
+		List<String> customList = new CustomList<String>();
+		assertTrue(customList.isEmpty());
+		customList.add(TEST_STRING);
+		assertFalse(customList.isEmpty());
 	}
 
 	@Test
 	public void testContains() {
-		// TODO: Implement
+		List<String> customList = new CustomList<String>();
+		assertFalse(customList.contains(TEST_STRING));
+		customList.add(TEST_STRING);
+		assertTrue(customList.contains(TEST_STRING));
 	}
 
 	@Test
 	public void testToArray() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 	@Test
 	public void testToArrayTArray() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 	@Test
 	public void testRemoveObject1() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 	@Test
 	public void testContainsAll() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 	@Test
 	public void testAddAllCollectionOfQextendsE() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 	@Test
 	public void testRemoveAllCollectionOfQ1() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 	@Test
 	public void testRetainAll() {
 		// TODO: Implement
+		List<String> customList = new CustomList<String>();
 	}
 
 }

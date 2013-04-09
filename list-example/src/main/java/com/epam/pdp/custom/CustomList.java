@@ -92,6 +92,22 @@ public class CustomList<T> extends AbstractList<T> {
 		return elementsList.set(index, element);
 	}
 
+	@Override
+	public boolean isEmpty() {
+		boolean isEmpty = true;
+		if (elementsList.size() == POSITION_TO_INSERT) {
+			for (T element : elementsList) {
+				if (element != null) {
+					isEmpty = false;
+					break;
+				}
+			}
+		} else {
+			isEmpty = false;
+		}
+		return isEmpty;
+	}
+
 	private void initCustomList() {
 		elementsList = new ArrayList<T>();
 		for (int index = 0; index < POSITION_TO_INSERT; index++) {
