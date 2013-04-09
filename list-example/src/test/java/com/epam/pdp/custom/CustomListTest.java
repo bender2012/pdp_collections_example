@@ -281,7 +281,16 @@ public class CustomListTest {
 
 	@Test
 	public void testToString() {
-		// TODO: Implement
+		System.out.println("testToString(): ");
+		String emptyListString = "[null, null, null, null, null]";
+		String listWithElementsString = "[null, null, null, null, null, TEST_2, TEST]";
+		List<String> customList = new CustomList<String>();
+		assertEquals(emptyListString, customList.toString());
+		customList.add(TEST_STRING);
+		customList.add(SECOND_TEST_STRING);
+		assertEquals(listWithElementsString, customList.toString());
+		System.out.println(customList);
+		System.out.println(LINE);
 	}
 
 	@Test
