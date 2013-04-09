@@ -239,22 +239,23 @@ public class CustomListTest {
 
 	@Test
 	public void testLastIndexOf() {
-		// TODO: Implement
+		List<String> customList = new CustomList<String>();
+		customList.add(TEST_STRING);
+		customList.add(SECOND_TEST_STRING);
+		assertEquals(POSITION_TO_INSERT, customList.lastIndexOf(SECOND_TEST_STRING));
+		assertEquals(POSITION_TO_INSERT + 1, customList.lastIndexOf(TEST_STRING));
 	}
 
 	@Test
-	public void testAddAllIntCollectionOfQextendsE() {
-		// TODO: Implement
-	}
-
-	@Test
-	public void testListIterator() {
-		// TODO: Implement
-	}
-
-	@Test
-	public void testListIteratorInt() {
-		// TODO: Implement
+	public void testAddAllIntCollectionOfQextendsE() {		
+		List<String> customList = new CustomList<String>();
+		Set<String> testSet = new HashSet<String>();
+		testSet.add(TEST_STRING);
+		testSet.add(SECOND_TEST_STRING);
+		customList.addAll(testSet);
+		for (String setEntry : testSet) {
+			assertTrue(customList.contains(setEntry));
+		}		
 	}
 
 	@Test
