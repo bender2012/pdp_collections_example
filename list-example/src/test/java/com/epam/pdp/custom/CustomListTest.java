@@ -195,37 +195,38 @@ public class CustomListTest {
 
 	@Test
 	public void testAddE() {
-		// TODO: Implement
+		List<String> customList = new CustomList<String>();
+		assertEquals(POSITION_TO_INSERT, customList.size());
+		customList.add(TEST_STRING);
+		assertEquals(POSITION_TO_INSERT + 1, customList.size());
+		assertEquals(TEST_STRING, customList.get(POSITION_TO_INSERT));
 	}
 
 	@Test
 	public void testClear() {
-		// TODO: Implement
-	}
-
-	@Test
-	public void testAbstractList() {
-		// TODO: Implement
-	}
-
-	@Test
-	public void testGetInt1() {
-		// TODO: Implement
+		List<String> customList = new CustomList<String>();
+		customList.add(TEST_STRING);
+		customList.clear();
+		assertNull(customList.get(POSITION_TO_INSERT - 1));
 	}
 
 	@Test
 	public void testSet() {
-		// TODO: Implement
+		int testPosition = 0;
+		List<String> customList = new CustomList<String>();
+		assertEquals(null, customList.get(testPosition));
+		assertEquals(null, customList.set(0, TEST_STRING));
+		assertEquals(TEST_STRING, customList.get(testPosition));
 	}
 
 	@Test
 	public void testAddIntE() {
-		// TODO: Implement
-	}
-
-	@Test
-	public void testRemoveInt1() {
-		// TODO: Implement
+		int positionToAdd = 3;
+		List<String> customList = new CustomList<String>();
+		assertEquals(POSITION_TO_INSERT, customList.size());
+		customList.add(positionToAdd, TEST_STRING);
+		assertEquals(TEST_STRING, customList.get(positionToAdd));
+		assertEquals(POSITION_TO_INSERT + 1, customList.size());
 	}
 
 	@Test

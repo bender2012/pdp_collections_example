@@ -12,10 +12,7 @@ public class CustomList<T> extends AbstractList<T> {
 	private ArrayList<T> elementsList;
 
 	public CustomList() {
-		elementsList = new ArrayList<T>();
-		for (int index = 0; index < POSITION_TO_INSERT; index++) {
-			elementsList.add(null);
-		}
+		initCustomList();
 	}
 
 	@Override
@@ -39,7 +36,7 @@ public class CustomList<T> extends AbstractList<T> {
 		elementsList = temporaryList;
 		return sucess;
 	}
-	
+
 	@Override
 	public void add(int index, T element) {
 		elementsList.add(index, element);
@@ -82,6 +79,23 @@ public class CustomList<T> extends AbstractList<T> {
 	protected void removeRange(int fromIndex, int toIndex) {
 		for (int index = fromIndex; index < toIndex; index++) {
 			this.remove(index);
+		}
+	}
+
+	@Override
+	public void clear() {
+		initCustomList();
+	}
+
+	@Override
+	public T set(int index, T element) {
+		return elementsList.set(index, element);
+	}
+
+	private void initCustomList() {
+		elementsList = new ArrayList<T>();
+		for (int index = 0; index < POSITION_TO_INSERT; index++) {
+			elementsList.add(null);
 		}
 	}
 
