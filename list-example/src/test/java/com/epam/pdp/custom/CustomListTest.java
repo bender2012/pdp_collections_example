@@ -2,10 +2,12 @@ package com.epam.pdp.custom;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ArrayBlockingQueue;
 
 import org.junit.Test;
 
@@ -234,7 +236,7 @@ public class CustomListTest {
 		List<String> customList = new CustomList<String>();
 		customList.add(TEST_STRING);
 		customList.add(SECOND_TEST_STRING);
-		assertEquals(POSITION_TO_INSERT + 1, customList.indexOf(TEST_STRING));		
+		assertEquals(POSITION_TO_INSERT + 1, customList.indexOf(TEST_STRING));
 	}
 
 	@Test
@@ -242,12 +244,14 @@ public class CustomListTest {
 		List<String> customList = new CustomList<String>();
 		customList.add(TEST_STRING);
 		customList.add(SECOND_TEST_STRING);
-		assertEquals(POSITION_TO_INSERT, customList.lastIndexOf(SECOND_TEST_STRING));
-		assertEquals(POSITION_TO_INSERT + 1, customList.lastIndexOf(TEST_STRING));
+		assertEquals(POSITION_TO_INSERT,
+				customList.lastIndexOf(SECOND_TEST_STRING));
+		assertEquals(POSITION_TO_INSERT + 1,
+				customList.lastIndexOf(TEST_STRING));
 	}
 
 	@Test
-	public void testAddAllIntCollectionOfQextendsE() {		
+	public void testAddAllIntCollectionOfQextendsE() {
 		List<String> customList = new CustomList<String>();
 		Set<String> testSet = new HashSet<String>();
 		testSet.add(TEST_STRING);
@@ -255,12 +259,24 @@ public class CustomListTest {
 		customList.addAll(testSet);
 		for (String setEntry : testSet) {
 			assertTrue(customList.contains(setEntry));
-		}		
+		}
 	}
 
 	@Test
 	public void testSubList() {
-		// TODO: Implement
+		System.out.println("testSubList()");
+		int expectedListSize = 3;
+		int fromIndex = POSITION_TO_INSERT - 2;
+		int toIndex = POSITION_TO_INSERT + 1;
+		List<String> customList = new CustomList<String>();
+		customList.add(TEST_STRING);
+		List<String> sublist = new ArrayList<String>();
+		sublist = customList.subList(fromIndex, toIndex);
+		assertEquals(expectedListSize, sublist.size());
+		assertEquals(null, sublist.get(0));
+		assertEquals(null, sublist.get(1));
+		assertEquals(TEST_STRING, sublist.get(2));
+		System.out.println(LINE);
 	}
 
 	@Test
