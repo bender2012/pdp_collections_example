@@ -3,6 +3,7 @@ package com.epam.pdp.custom;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -39,20 +40,18 @@ public class CustomListTest {
 	@Test
 	public void testRemoveRange() {
 		System.out.println("testRemoveRange():");
+		//TODO: Implement
 		System.out.println(LINE);
 	}
 
 	@Test
 	public void testCustomList() {
-		System.out.println("testCustomList()");
 		List<String> customList = new CustomList<String>();
 		assertEquals(POSITION_TO_INSERT, customList.size());
-		System.out.println(LINE);
 	}
 
 	@Test
 	public void testGetInt() {
-		System.out.println("testGetInt():");
 		List<String> customList = new CustomList<String>();
 		customList.add(TEST_STRING);
 		String element = customList.get(POSITION_TO_INSERT);
@@ -61,12 +60,10 @@ public class CustomListTest {
 			element = customList.get(index);
 			assertNull(element);
 		}
-		System.out.println(LINE);
 	}
 
 	@Test
 	public void testAddT() {
-		System.out.println("testAddT()");
 		List<String> customList = new CustomList<String>();
 		assertEquals(POSITION_TO_INSERT, customList.size());
 		customList.add(TEST_STRING);
@@ -75,7 +72,6 @@ public class CustomListTest {
 		customList.add(SECOND_TEST_STRING);
 		assertEquals(POSITION_TO_INSERT + 2, customList.size());
 		assertEquals(SECOND_TEST_STRING, customList.get(POSITION_TO_INSERT));
-		System.out.println(LINE);
 	}
 
 	@Test
@@ -165,14 +161,12 @@ public class CustomListTest {
 
 	@Test
 	public void testEquals() {
-		System.out.println("testEquals():");
 		List<String> firstList = new CustomList<String>();
 		List<String> secondList = new CustomList<String>();
 		assertEquals(firstList, secondList);
 		secondList.add(TEST_STRING);
 		firstList.add(TEST_STRING);
 		assertEquals(firstList, secondList);
-		System.out.println(LINE);
 	}
 
 	@Test
@@ -263,8 +257,7 @@ public class CustomListTest {
 	}
 
 	@Test
-	public void testSubList() {
-		System.out.println("testSubList()");
+	public void testSubList() {		
 		int expectedListSize = 3;
 		int fromIndex = POSITION_TO_INSERT - 2;
 		int toIndex = POSITION_TO_INSERT + 1;
@@ -276,7 +269,6 @@ public class CustomListTest {
 		assertEquals(null, sublist.get(0));
 		assertEquals(null, sublist.get(1));
 		assertEquals(TEST_STRING, sublist.get(2));
-		System.out.println(LINE);
 	}
 
 	@Test
@@ -311,44 +303,68 @@ public class CustomListTest {
 
 	@Test
 	public void testToArray() {
-		// TODO: Implement
+		int testArraySize = 6;
 		List<String> customList = new CustomList<String>();
+		customList.add(TEST_STRING);
+		Object[] testArray = new Object[testArraySize];
+		for (int i = 0; i < POSITION_TO_INSERT; i++) {
+			testArray[i] = null;
+		}
+		testArray[testArraySize - 1] = TEST_STRING;
+		Object[] customArrayFromList = customList.toArray();
+		assertEquals(testArraySize, customArrayFromList.length);
+		for (int i = 0; i < testArraySize; i++) {
+			assertEquals(testArray[i], customArrayFromList[i]);
+		}
 	}
 
 	@Test
 	public void testToArrayTArray() {
-		// TODO: Implement
 		List<String> customList = new CustomList<String>();
-	}
-
-	@Test
-	public void testRemoveObject1() {
-		// TODO: Implement
-		List<String> customList = new CustomList<String>();
+		customList.add(TEST_STRING);
+		String[] testArayFromList = customList
+				.toArray(new String[POSITION_TO_INSERT + 1]);
+		for (int i = 0; i < POSITION_TO_INSERT; i++) {
+			assertNull(testArayFromList[i]);
+		}
+		assertEquals(TEST_STRING, testArayFromList[POSITION_TO_INSERT]);
 	}
 
 	@Test
 	public void testContainsAll() {
-		// TODO: Implement
 		List<String> customList = new CustomList<String>();
+		List<String> testList = new ArrayList<String>();
+		testList.add(TEST_STRING);
+		testList.add(SECOND_TEST_STRING);
+		testList.add(null);
+		assertFalse(customList.containsAll(testList));
+		customList.add(TEST_STRING);
+		customList.add(SECOND_TEST_STRING);
+		assertTrue(customList.containsAll(testList));
 	}
 
 	@Test
 	public void testAddAllCollectionOfQextendsE() {
-		// TODO: Implement
 		List<String> customList = new CustomList<String>();
-	}
-
-	@Test
-	public void testRemoveAllCollectionOfQ1() {
-		// TODO: Implement
-		List<String> customList = new CustomList<String>();
+		Collection<String> testCollection = new HashSet<String>();		
+		testCollection.add(TEST_STRING);
+		testCollection.add(SECOND_TEST_STRING);		
+		assertFalse(customList.containsAll(testCollection));				
+		assertTrue(customList.addAll(testCollection));		
+		assertTrue(customList.containsAll(testCollection));		
 	}
 
 	@Test
 	public void testRetainAll() {
-		// TODO: Implement
 		List<String> customList = new CustomList<String>();
+		Collection<String> testCollection = new HashSet<String>();
+		testCollection.add(null);
+		testCollection.add(TEST_STRING);
+		testCollection.add(SECOND_TEST_STRING);
+		customList.add(TEST_STRING);		
+		customList.retainAll(testCollection);		
+		assertEquals(POSITION_TO_INSERT + 1, customList.size());
+		assertTrue(customList.contains(TEST_STRING));
 	}
 
 }
