@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import org.junit.Test;
 
@@ -34,13 +33,6 @@ public class CustomListTest {
 		assertEquals(POSITION_TO_INSERT + 2, customList.size());
 		System.out.print("List with added elements: ");
 		System.out.println(customList.toString());
-		System.out.println(LINE);
-	}
-
-	@Test
-	public void testRemoveRange() {
-		System.out.println("testRemoveRange():");
-		//TODO: Implement
 		System.out.println(LINE);
 	}
 
